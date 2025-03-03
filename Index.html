@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>E-Shop - Professional Futuristic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+      min-height: 100vh;
+      color: #e0e0e0;
+      overflow-x: hidden;
+    }
+    
+    /* --- TOP COVER SECTION --- */
+    .top-cover {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background: url('https://assets.starkfuture.com/frontend-assets/ex-config/SEX1_Color_Snow_White.webp') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cover-overlay {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 15px;
+      padding: 40px 60px;
+      backdrop-filter: blur(12px);
+      text-align: center;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .cover-overlay:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+    .cover-overlay h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #f0f0f0;
+    }
+    .cover-overlay button {
+      background: linear-gradient(135deg, #00bcd4, #008ba3);
+      color: #1a1a1a;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .cover-overlay button:hover {
+      transform: translateY(-4px);
+      background: linear-gradient(135deg, #00cfe0, #0095b0);
+    }
+    
+    /* --- CARDS SECTION (Bikes Collection) --- */
+    .cards-section {
+      padding: 60px 20px;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(6px);
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #e0e0e0;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      position: relative;
+      display: block;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 15px;
+      overflow: hidden;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 20px rgba(0, 188, 212, 0.3);
+    }
+    .card img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      height: 180px;
+    }
+    .card-info {
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(5px);
+      text-align: center;
+    }
+    /* Bike Name and Price styled like top cover text */
+    .bike-name {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8rem;
+      color: #f0f0f0;
+      margin-bottom: 8px;
+    }
+    .bike-price {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.2rem;
+      color: #00bcd4;
+      margin-bottom: 12px;
+    }
+    /* Optional description styling (if needed) */
+    .bike-desc {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <!-- TOP COVER SECTION -->
+  <div class="top-cover">
+    <div class="cover-overlay">
+      <h1>100 HP Stark Varg</h1>
+      <button>Shop Now</button>
+    </div>
+  </div>
+
+  <!-- CARDS SECTION (Bikes Collection) -->
+  <div class="cards-section">
+    <div class="container">
+      <h2 class="section-title">Shop Now</h2>
+      <div class="cards-grid">
+        <!-- Card 1 -->
+        <a href="lightbee.html" class="card">
+          <img src="Light-Bee-x.png" alt="Light Bee X">
+          <div class="card-info">
+            <h3 class="bike-name">Sur Ron Light Bee X</h3>
+            <p class="bike-price">$4,200</p>
+            <!-- Optional description; remove if not needed -->
+            <p class="bike-desc">$15,000</p>
+          </div>
+        </a>
+        <!-- Card 2 -->
+        <a href="ultrabee.html" class="card">
+          <img src="Ultra-Bee.png" alt="Ultra Bee">
+          <div class="card-info">
+            <h3 class="bike-name">Sur Ron Ultra Bee</h3>
+            <p class="bike-price">$6,000</p>
+            <p class="bike-desc">$24,000</p>
+          </div>
+        </a>
+        <!-- Card 3 -->
+        <a href="Eride.html" class="card">
+          <img src="EridePross.png" alt="EridePro">
+          <div class="card-info">
+            <h3 class="bike-name">E-Ride Pro SS 1.0  </h3>
+            <p class="bike-price">$4,000</p>
+            <p class="bike-desc">$13,000</p>
+          </div>
+        </a>
+        <a href="Eride2.html" class="card">
+          <img src="EridePross.png" alt="EridePro2">
+          <div class="card-info">
+            <h3 class="bike-name">E-Ride Pro SS 2.0  </h3>
+            <p class="bike-price">$4,500</p>
+            <p class="bike-desc">$22,000</p>
+          </div>
+        </a>
+        <a href="Eride3.html" class="card">
+          <img src="EridePross.png" alt="EridePro3">
+          <div class="card-info">
+            <h3 class="bike-name">E-Ride Pro SS 3.0  </h3>
+            <p class="bike-price">$5,500</p>
+            <p class="bike-desc">$27,000</p>
+          </div>
+        </a>
+        <!-- Card 4 -->
+        <a href="Sigma.html" class="card">
+          <img src="AltisSigma.png" alt="AltisSigma">
+          <div class="card-info">
+            <h3 class="bike-name">Altis Sigma Base</h3>
+            <p class="bike-price">$5,500</p>
+            <p class="bike-desc">$17,000</p>
+          </div>
+        </a>
+        <a href="SigmaMx.html" class="card">
+          <img src="SimgaMX.png" alt="AltisSigmaMx">
+          <div class="card-info">
+            <h3 class="bike-name">Altis Sigma MX</h3>
+            <p class="bike-price">$6,500</p>
+            <p class="bike-desc">$19,000</p>
+          </div>
+        </a>
+        <a href="RawrMantisX.html" class="card">
+          <img src="MantisX.png" alt="MantisX">
+          <div class="card-info">
+            <h3 class="bike-name">Rawr Mantis X</h3>
+            <p class="bike-price">$3,000</p>
+            <p class="bike-desc">$9,000</p>
+          </div>
+        </a>
+        <a href="RawrMantisM.html" class="card">
+          <img src="MantisX.png" alt="MantisM">
+          <div class="card-info">
+            <h3 class="bike-name">Rawr Mantis M</h3>
+            <p class="bike-price">$2,300</p>
+            <p class="bike-desc">$7,000</p>
+          </div>
+        </a>
+        <a href="TalariaDragon.html" class="card">
+          <img src="TalariaDragon.png" alt="TalariaDragon">
+          <div class="card-info">
+            <h3 class="bike-name">Talaria Dragon</h3>
+            <p class="bike-price">$7,500</p>
+            <p class="bike-desc">$23,000</p>
+          </div>
+        </a>
+        <a href="TalariaStRmx4EE.html" class="card">
+          <img src="TalariaStingE.png" alt="TALARIASTINGRMX4EXPERTEDITION">
+          <div class="card-info">
+            <h3 class="bike-name">Talaria Sting E</h3>
+            <p class="bike-price">$4,400</p>
+            <p class="bike-desc">$19,000</p>
+          </div>
+        </a>
+        <a href="TalariaStingR4.html" class="card">
+          <img src="TalariaStingRMX4.png" alt="TalariaStingRMX4">
+          <div class="card-info">
+            <h3 class="bike-name">Talaria Sting 4</h3>
+            <p class="bike-price">$4,100</p>
+            <p class="bike-desc">$13,000</p>
+          </div>
+        </a>
+        <a href="TalariaStingR3.html" class="card">
+          <img src="TalariaStingRMX4.png" alt="TalariaStingRMX3">
+          <div class="card-info">
+            <h3 class="bike-name">Talaria Sting 3</h3>
+            <p class="bike-price">$3,200</p>
+            <p class="bike-desc">$8,000</p>
+          </div>
+        </a>
+        <a href="TalariaSting.html" class="card">
+          <img src="TalariaSting.png" alt="TalariaSting">
+          <div class="card-info">
+            <h3 class="bike-name">Talaria Sting</h3>
+            <p class="bike-price">$3,700</p>
+            <p class="bike-desc">$10,000</p>
+          </div>
+        </a>
+        <a href="Talariax3.html" class="card">
+          <img src="Talariax3.png" alt="Talariax3">
+          <div class="card-info">
+            <h3 class="bike-name">Talaria X3</h3>
+            <p class="bike-price">$3,100</p>
+            <p class="bike-desc">$12,000</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
