@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ultra Bee</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Global Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f5f5f5;
+      overflow-x: hidden;
+    }
+    
+    /* --- TOP HEADER SECTION --- */
+    .top-header {
+      position: relative;
+      width: 100%;
+    }
+    .hd-image {
+      position: relative;
+      width: 100%;
+      height: 600px;
+      background: url('Ultra-Bee.png') no-repeat center center;
+      background-size: cover;
+    }
+    .home-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background: rgba(230, 229, 229, 0.7);
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      font-family: 'Montserrat', sans-serif;
+      transition: transform 0.3s ease;
+    }
+    .home-button:hover {
+      transform: scale(1.05);
+    }
+    .title-desc {
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(8px);
+      border-radius: 10px;
+      margin: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .title-desc h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .title-desc p {
+      font-size: 1rem;
+      color: #555;
+    }
+    
+    /* --- DROPDOWN SECTIONS --- */
+    .dropdown-section {
+      margin: 20px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 15px;
+      backdrop-filter: blur(12px);
+      padding: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .dropdown-section details {
+      cursor: pointer;
+    }
+    .dropdown-section summary {
+      list-style: none;
+      font-size: 1.2rem;
+      font-family: 'Montserrat', sans-serif;
+      color: #333;
+      padding: 10px;
+      outline: none;
+    }
+    .dropdown-section details[open] summary {
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    .options {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 10px;
+    }
+    .option-btn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.7);
+      cursor: pointer;
+      font-family: 'Roboto', sans-serif;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .option-btn.selected {
+      background: #00bcd4;
+      color: #fff;
+      transform: scale(1.05);
+    }
+    
+    /* --- FLOATING MONEY ADDER --- */
+    .money-adder {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 15px 25px;
+      border-radius: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Header Section -->
+  <header class="top-header">
+    <div class="hd-image">
+      <button class="home-button" onclick="goHome()">Home</button>
+    </div>
+    <div class="title-desc">
+      <h1>Ultra Bee</h1>
+      <p>The Ultra Bee represents an advanced electric dirt bike platform, boasting enhanced performance, agility, and a host of genuine, real-life mods to tailor your ride to perfection. Experience a thrilling and reliable ride on any terrain.</p>
+    </div>
+  </header>
+  
+  <!-- Dropdown Sections -->
+  <main>
+    <!-- Section 1: Coating -->
+    <section class="dropdown-section" data-section="1">
+      <details>
+        <summary>Choose Coating</summary>
+        <div class="options">
+          <button class="option-btn" data-value="0" onclick="selectOption(this, 1)">Stock</button>
+          <button class="option-btn" data-value="200" onclick="selectOption(this, 1)">Powder Coating</button>
+          <button class="option-btn" data-value="400" onclick="selectOption(this, 1)">Built</button>
+        </div>
+      </details>
+    </section>
+    <!-- Section 2: Build Color -->
+    <section class="dropdown-section" data-section="2">
+      <details>
+        <summary>Choose Build Color</summary>
+        <div class="options">
+          <button class="option-btn" data-value="0" onclick="selectOption(this, 2)">Stock</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Gloss Black</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Matte Black</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Satin Black</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Gloss White</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Matte White</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Pearl White</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Gunmetal Gray</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Charcoal Gray</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Anthracite Gray</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Titanium Gray</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Midnight Blue</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Sky Blue</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Baby Blue</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Cobalt Blue</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Royal Blue</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Candy Blue</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Neon Blue</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Forest Green</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Lime Green</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Olive Green</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Candy Green</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Neon Green</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Bright Red</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Candy Red</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Cherry Red</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Matte Red</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Burgundy</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Orange</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Burnt Orange</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Neon Orange</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Sunset Orange</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Bright Yellow</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Neon Yellow</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Gold</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Bronze</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Copper</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Rose Gold</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Purple</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Candy Purple</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Neon Purple</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Magenta</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Lavender</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Silver</button>  
+          <button class="option-btn" data-value="50" onclick="selectOption(this, 2)">Chrome</button>
+        </div>
+      </details>
+    </section>
+    <!-- Section 3: Battery -->
+    <section class="dropdown-section" data-section="3">
+      <details>
+        <summary>Battery</summary>
+        <div class="options">
+            <button class="option-btn" data-value="0" onclick="selectOption(this, 3)">Stock 74V Battery</button>
+            <button class="option-btn" data-value="2750" onclick="selectOption(this, 3)">EBMX 81V 45Ah Race Battery</button>
+            <button class="option-btn" data-value="3600" onclick="selectOption(this, 3)">EWATT 81V 76Ah High Capacity Battery</button>
+            <button class="option-btn" data-value="3700" onclick="selectOption(this, 3)">EBMX 81V 76Ah Performance Battery</button>            
+        </div>
+      </details>
+    </section>
+    <!-- Section 4: Controller -->
+    <section class="dropdown-section" data-section="4">
+      <details>
+        <summary>Controller</summary>
+        <div class="options">
+            <button class="option-btn" data-value="0" onclick="selectOption(this, 4)">Stock Controller (12.5kW)</button>
+            <button class="option-btn" data-value="1415" onclick="selectOption(this, 4)">Torp TC500 (25kW)</button>
+            <button class="option-btn" data-value="1103" onclick="selectOption(this, 4)">Sine Wave Controller (12.5kW)</button>
+            <button class="option-btn" data-value="1199" onclick="selectOption(this, 4)">Torp TC1000 (50kW)</button>
+            <button class="option-btn" data-value="1200" onclick="selectOption(this, 4)">EBMX X9000 (40kW)</button>
+            <button class="option-btn" data-value="2200" onclick="selectOption(this, 4)">Beat Crew Hyper X (65kW)</button>            
+      </details>
+    </section>
+    <!-- Section 5: Cosmetics -->
+    <section class="dropdown-section" data-section="5">
+      <details>
+        <summary>Cosmetics</summary>
+        <div class="options">
+            <button class="option-btn" data-value="64" onclick="selectOption(this, 5)">Headlight Decal Kit</button>
+            <button class="option-btn" data-value="19" onclick="selectOption(this, 5)">Kia Sorento Emblem Overlay Decals</button>
+            <button class="option-btn" data-value="50" onclick="selectOption(this, 5)">Carbon Fiber Side Panels</button>
+            <button class="option-btn" data-value="20" onclick="selectOption(this, 5)">Custom Number Plate</button>
+            <button class="option-btn" data-value="60" onclick="selectOption(this, 5)">LED Underglow Kit</button>
+            <button class="option-btn" data-value="40" onclick="selectOption(this, 5)">Racing Saddle Cover</button>
+            
+        </div>
+      </details>
+    </section>
+    <!-- Section 6: Mods -->
+    <section class="dropdown-section" data-section="6">
+      <details>
+        <summary>Mods</summary>
+        <div class="options">
+          <button class="option-btn" data-value="199" onclick="selectOption(this, 6)">Magura MT5E Hydraulic Brake Kit</button>
+          <button class="option-btn" data-value="7" onclick="selectOption(this, 6)">Galfer 203mm Floating Brake Rotor</button>
+          <button class="option-btn" data-value="89" onclick="selectOption(this, 6)">Galfer 220mm Brake Rotor</button>
+          <button class="option-btn" data-value="34" onclick="selectOption(this, 6)">Braided Stainless Steel Brake Lines</button>
+          <button class="option-btn" data-value="119" onclick="selectOption(this, 6)">Fox Racing Rear Shock Spring</button>
+          <button class="option-btn" data-value="999" onclick="selectOption(this, 6)">Fox Float X Rear Shock</button>
+          <button class="option-btn" data-value="499" onclick="selectOption(this, 6)">Manitou Dorado Forks</button>
+          <button class="option-btn" data-value="1099" onclick="selectOption(this, 6)">Marzocchi Bomber 58 Fork</button>
+          <button class="option-btn" data-value="1349" onclick="selectOption(this, 6)">Fox 40 Factory Fork</button>
+          <button class="option-btn" data-value="29" onclick="selectOption(this, 6)">ProTaper Clamp-On Grips</button>
+          <button class="option-btn" data-value="69" onclick="selectOption(this, 6)">Cush Core Tire Inserts</button>
+          <button class="option-btn" data-value="39" onclick="selectOption(this, 6)">Michelin StarCross 5 Rear Tire</button>
+          <button class="option-btn" data-value="49" onclick="selectOption(this, 6)">Shinko 241 Rear Tire</button>
+          <button class="option-btn" data-value="59" onclick="selectOption(this, 6)">Dunlop MX33 Front Tire</button>
+          <button class="option-btn" data-value="24" onclick="selectOption(this, 6)">Heavy-Duty Inner Tube</button>
+          <button class="option-btn" data-value="79" onclick="selectOption(this, 6)">Talon Rear Sprocket (54T)</button>
+          <button class="option-btn" data-value="59" onclick="selectOption(this, 6)">Primary Drive 420 O-Ring Chain</button>
+        </div>
+      </details>
+    </section>
+    <!-- Section 7: Assembly -->
+    <section class="dropdown-section" data-section="7">
+      <details>
+        <summary>Assembly</summary>
+        <div class="options">
+          <button class="option-btn" data-value="0" onclick="selectOption(this, 7)">Non-Assembled</button>
+          <button class="option-btn" data-value="150" onclick="selectOption(this, 7)">Partially Assembled</button>
+          <button class="option-btn" data-value="300" onclick="selectOption(this, 7)">Assembled</button>
+        </div>
+      </details>
+    </section>
+  </main>
+  
+  <!-- Floating Money Adder -->
+  <div class="money-adder" id="moneyAdder">
+    Total: $<span id="totalValue">6000</span>
+  </div>
+  
+  <script>
+    let basePrice = 5000; // Market value (no decimals)
+  
+    // Object to store the selected value for each section
+    let selections = {
+      1: 0, 2: 0, 3: 0, 4: 0, 
+      5: [], 6: [], 7: 0
+    };
+  
+    // Sections that allow multiple selections
+    let multiSelectSections = [5, 6];
+  
+    function updateTotal() {
+      let total = basePrice;
+      for (let key in selections) {
+        if (Array.isArray(selections[key])) {
+          total += selections[key].reduce((sum, value) => sum + value, 0);
+        } else {
+          total += parseFloat(selections[key]);
+        }
+      }
+      document.getElementById('totalValue').innerText = total;
+    }
+  
+    function selectOption(button, section) {
+      const sectionElement = document.querySelector(`section[data-section="${section}"]`);
+  
+      if (multiSelectSections.includes(section)) {
+        if (button.classList.contains('selected')) {
+          button.classList.remove('selected');
+          selections[section] = selections[section].filter(value => value !== parseFloat(button.getAttribute('data-value')));
+        } else {
+          button.classList.add('selected');
+          selections[section].push(parseFloat(button.getAttribute('data-value')));
+        }
+      } else {
+        const buttons = sectionElement.querySelectorAll('.option-btn');
+        buttons.forEach(btn => btn.classList.remove('selected'));
+        button.classList.add('selected');
+        selections[section] = parseFloat(button.getAttribute('data-value'));
+      }
+  
+      updateTotal();
+    }
+  
+    function goHome() {
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>
